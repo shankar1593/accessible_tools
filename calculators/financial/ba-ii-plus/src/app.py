@@ -1439,4 +1439,5 @@ def handle_date(ndbd, ndt2, dt1_s, dt2_s, dbd, method):
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8052))
+    print(f"\n  Open in browser: http://localhost:{port}\n")
     app.run(debug=True, host="0.0.0.0", port=port)

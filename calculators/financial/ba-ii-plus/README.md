@@ -80,7 +80,7 @@ cd calculators/financial/ba-ii-plus/src
 python app.py
 ```
 
-Open `http://localhost:8052`.
+Open [http://localhost:8052](http://localhost:8052) (the URL is also printed in the terminal when the app starts).
 
 ## Run tests
 
