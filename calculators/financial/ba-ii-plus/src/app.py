@@ -7,13 +7,17 @@ Run:  pip install dash dash-bootstrap-components
 """
 
 import math
+import os
 from datetime import date
 
 import dash
 from dash import html, dcc, Input, Output, State, ctx
 import dash_bootstrap_components as dbc
 
-from calculator import FinancialCalculator
+try:
+    from calculator import FinancialCalculator
+except ImportError:
+    from src.calculator import FinancialCalculator
 
 # ── lang="en" on <html> ───────────────────────────────────────────────────────
 INDEX_STRING = """<!DOCTYPE html>
@@ -1434,4 +1438,5 @@ def handle_date(ndbd, ndt2, dt1_s, dt2_s, dbd, method):
 # =============================================================================
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8052)
+    port = int(os.environ.get("PORT", 8052))
+    app.run(debug=True, host="0.0.0.0", port=port)

@@ -7,6 +7,8 @@ This project is a screen-reader-first, web-based replica of the Texas Instrument
 [![WCAG 2.1 AA](https://img.shields.io/badge/WCAG-2.1%20AA-6f42c1)](https://www.w3.org/TR/WCAG21/)
 [![WAI-ARIA 1.1](https://img.shields.io/badge/WAI--ARIA-1.1-0a7ea4)](https://www.w3.org/TR/wai-aria-1.1/)
 
+> **Live demo:** [ba-ii-plus-accessible.onrender.com](https://ba-ii-plus-accessible.onrender.com) *(free tier — may take ~30 s to wake on first visit)*
+
 ## Why this exists
 
 Blind and low-vision candidates preparing for CFA, FRM and other competitive finance exams are often required to use approved calculator workflows, but the physical BA II Plus can be difficult or impossible to use non-visually at exam speed. This project provides a faithful, accessible learning and practice environment so users can study concepts and workflows with screen readers while preserving BA II Plus worksheet logic and sign conventions.
@@ -27,7 +29,7 @@ Blind and low-vision candidates preparing for CFA, FRM and other competitive fin
 
 ## Screenshot
 
-![Screenshot placeholder: BA II Plus accessible web UI](docs/screenshot-placeholder.png)
+![Screenshot placeholder: BA II Plus accessible web UI](docs/screenshot.png)
 
 ## Project structure
 
