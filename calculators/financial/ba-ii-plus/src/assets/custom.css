@@ -1,0 +1,171 @@
+/* ============================================================
+   BA II Plus Accessible Calculator — Global Stylesheet
+   WCAG 2.1 AA + WAI-ARIA 1.1
+   Dash auto-loads everything in the assets/ folder.
+   ============================================================ */
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+/* Skip navigation (Fix 7) */
+.skip-nav{
+  position:absolute;top:-9999px;left:0;z-index:9999;
+  background:#ffb300;color:#000;font-weight:700;
+  padding:10px 20px;text-decoration:none;border-radius:0 0 4px 0;
+}
+.skip-nav:focus{top:0;outline:3px solid #000;outline-offset:0}
+
+body{
+  background:#0a0a0a;color:#f5f5f5;
+  font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+  font-size:1rem;line-height:1.6;
+}
+
+/* Calculator display — role=status region (Fix 2) */
+.calc-display{
+  background:#000;color:#ffb300;
+  font-family:'Courier New',Courier,monospace;
+  font-size:clamp(1.6rem,4vw,2.4rem);font-weight:700;
+  text-align:right;padding:14px 18px;
+  border:2px solid #ffb300;border-radius:6px;
+  min-height:68px;width:100%;
+  overflow:hidden;white-space:nowrap;text-overflow:ellipsis;
+}
+
+.mode-banner{
+  background:#1a1a1a;color:#ffb300;font-size:.85rem;
+  padding:6px 14px;border-left:3px solid #ffb300;
+  margin-bottom:10px;min-height:28px;
+}
+
+/* Buttons — min 48px touch target (WCAG 2.5.5), Fix 6 borders */
+.calc-btn{
+  background:#1a1a1a;color:#f5f5f5;
+  border:1px solid #555555;border-radius:4px;
+  font-size:1rem;font-weight:600;padding:0 6px;
+  width:100%;margin-bottom:6px;cursor:pointer;
+  min-height:48px;min-width:44px;
+  display:inline-flex;align-items:center;justify-content:center;
+  transition:background .12s;
+}
+/* Fix 4 — focus-visible ring only (keyboard users), not mouse */
+.calc-btn:focus-visible{outline:3px solid #ffb300;outline-offset:2px}
+.calc-btn:hover{background:#555555}
+.calc-btn:active{transform:scale(.96)}
+
+.btn-primary{background:#ffb300;color:#000;border:none;font-weight:700}
+.btn-primary:hover{background:#cc8f00;color:#000}
+.btn-primary:focus-visible{outline:3px solid #fff;outline-offset:2px}
+
+.btn-danger{background:#2a0505;color:#ff6d6d;border:1px solid #ff6d6d}
+.btn-danger:hover{background:#3a0808}
+.btn-danger:focus-visible{outline:3px solid #ff6d6d;outline-offset:2px}
+
+/* Worksheet cards */
+.ws-card{
+  background:#1a1a1a;border:1px solid #555555;
+  border-radius:8px;padding:18px;margin-bottom:14px;
+}
+/* Semantic headings inside cards (Fix 3) */
+.ws-card h2{
+  color:#ffb300;font-size:1rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.8px;
+  border-bottom:1px solid #555555;padding-bottom:8px;margin-bottom:14px;
+}
+.ws-card h3{
+  color:#ffb300;font-size:.9rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.5px;margin:12px 0 8px;
+}
+
+/* Form labels and inputs */
+label{
+  color:#c0c0c0;font-size:.85rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.4px;
+  display:block;margin-bottom:4px;
+}
+.ws-input{
+  width:100%;
+  background:#111!important;color:#f5f5f5!important;
+  border:1px solid #555555!important;
+  border-radius:4px;padding:8px 10px;font-size:1rem;
+  width:100%;max-width:100%;min-width:0;
+  min-height:44px;
+}
+
+.ws-input[type=number]::-webkit-inner-spin-button,
+.ws-input[type=number]::-webkit-outer-spin-button{
+  -webkit-appearance:none;
+  margin:0;
+}
+.ws-input[type=number]{
+  appearance:textfield;
+  -moz-appearance:textfield;
+}
+.ws-input:focus{
+  border-color:#ffb300!important;
+  outline:2px solid #ffb300!important;outline-offset:1px;
+  box-shadow:none!important;
+}
+
+/* Help text linked via aria-describedby (Fix 8) */
+.help-text{font-size:.8rem;color:#c0c0c0;margin-top:3px}
+
+/* Result / error / info boxes — icons not colour alone (Fix 5) */
+.result-box{
+  background:#001a08;border:1px solid #00e676;border-radius:6px;
+  color:#00e676;font-family:'Courier New',monospace;
+  font-size:1rem;font-weight:600;padding:12px 14px;
+  margin-top:10px;min-height:48px;white-space:pre-wrap;word-break:break-word;
+}
+/* border-left provides extra non-colour error cue (Fix 5) */
+.error-box{
+  background:#1a0202;border:1px solid #ff6d6d;
+  border-left:4px solid #ff6d6d;border-radius:6px;
+  color:#ff6d6d;font-size:.95rem;padding:10px 14px;
+  margin-top:10px;min-height:44px;
+}
+.info-box{
+  background:#001625;border:1px solid #40c4ff;border-radius:6px;
+  color:#40c4ff;font-size:.88rem;padding:10px 14px;margin-top:8px;
+}
+
+/* Dash tab strip overrides */
+.dash-tab{
+  background:#1a1a1a!important;color:#c0c0c0!important;
+  border:1px solid #555555!important;border-bottom:none!important;
+  border-radius:4px 4px 0 0!important;
+  padding:7px 12px!important;font-size:.82rem!important;
+  font-weight:600!important;min-height:36px!important;cursor:pointer;
+}
+.dash-tab--selected{
+  background:#ffb300!important;color:#000!important;
+  border-color:#ffb300!important;
+}
+.dash-tab:focus-visible{
+  outline:3px solid #ffb300!important;outline-offset:2px!important
+}
+
+/* Amortization key-value rows */
+.amort-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:6px 0;border-bottom:1px solid #555555;font-family:monospace;
+}
+.amort-row:last-child{border-bottom:none}
+.amort-label{color:#c0c0c0;font-size:.9rem}
+.amort-val{font-weight:700;font-size:1rem}
+
+/* App header */
+.app-header{
+  background:#1a1a1a;border-bottom:2px solid #ffb300;
+  padding:10px 20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.app-subtitle{color:#c0c0c0;font-size:.85rem}
+
+/* Section headings (Fix 3 — real h2/h3 elements) */
+.section-heading{
+  color:#ffb300;font-size:.78rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:1px;margin:14px 0 8px;
+}
+
+@media(max-width:576px){
+  .calc-btn{min-height:44px;padding:0 2px;font-size:.9rem}
+}
