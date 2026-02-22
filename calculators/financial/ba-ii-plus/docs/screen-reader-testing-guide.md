@@ -15,9 +15,13 @@ This guide defines repeatable checks for NVDA, JAWS, and VoiceOver against the B
 ## Common checks (all screen readers)
 
 1. Navigate by heading and confirm worksheet structure is discoverable.
-2. Activate skip link and confirm focus jumps to main content.
-3. Trigger a calculation and confirm result is announced as a live status message.
-4. Confirm calculator display is announced as a **status region**, not an editable text box.
+2. Activate "Skip to calculator" link and confirm focus jumps to main content.
+3. Activate "Skip to worksheet tabs" link and confirm focus jumps to the tab strip.
+4. Trigger a calculation and confirm result is announced as a live status message.
+5. Confirm calculator display is announced as a **status region**, not an editable text box.
+6. Use **Left/Right arrow keys** on the tab strip to switch between worksheets (e.g., Basic Calc → TVM → Amort).
+7. Press **Alt+T** from within a worksheet to jump focus back to the tab strip.
+8. Confirm the tab strip is announced with `role="tablist"` and individual tabs with `role="tab"` and correct `aria-selected` state.
 
 ---
 
@@ -32,9 +36,10 @@ This guide defines repeatable checks for NVDA, JAWS, and VoiceOver against the B
 
 1. Open page and press `NVDA+Space` to confirm Browse Mode is active.
 2. Press `H` repeatedly to move through headings (`h1`, then worksheet `h2/h3`).
-3. Press `Tab` from top of page and verify first actionable item is the skip link.
-4. Press `Enter` on skip link and confirm focus jumps to main worksheet content.
-5. Tab to a TVM field (e.g., `N` or `I/Y`) and enter values.
+3. Press `Tab` from top of page and verify first actionable items are the skip links ("Skip to calculator" then "Skip to worksheet tabs").
+4. Press `Enter` on either skip link and confirm focus jumps to the correct target.
+5. Press `Alt+T` to jump to the tab strip. Use Left/Right arrow keys to switch worksheets.
+6. Tab to a TVM field (e.g., `N` or `I/Y`) and enter values.
 6. Activate a compute button (e.g., Compute PMT).
 7. Listen for the polite live region announcement of the result.
 8. Move to the calculator display and use NVDA element info to confirm role behaves as status (non-editable).
@@ -42,7 +47,9 @@ This guide defines repeatable checks for NVDA, JAWS, and VoiceOver against the B
 ### Pass criteria
 
 - Heading navigation is complete and ordered.
-- Skip link works from keyboard only.
+- Both skip links work from keyboard only.
+- Arrow-key tab switching works and screen reader announces the new tab.
+- Alt+T shortcut jumps to the tab strip from any location.
 - Result announcements are spoken without forcing focus jump.
 - Display is not exposed as an editable textbox.
 
@@ -59,8 +66,9 @@ This guide defines repeatable checks for NVDA, JAWS, and VoiceOver against the B
 
 1. Load app and use `Insert+F6` to open heading list.
 2. Verify worksheet headings appear with meaningful labels.
-3. Use `Tab` to reach skip link; activate it with `Enter`.
-4. Confirm focus lands in main calculator content.
+3. Use `Tab` to reach skip links; activate "Skip to worksheet tabs" with `Enter`.
+4. Confirm focus lands on the tab strip. Use Left/Right arrow keys to switch worksheets.
+5. Press `Alt+T` from within a worksheet to jump back to the tab strip.
 5. Switch into Forms Mode on a worksheet input and enter test values.
 6. Trigger computation and listen for status/live region output.
 7. Inspect calculator display announcement; it should be reported as a status-like region, not an edit field.
@@ -68,7 +76,9 @@ This guide defines repeatable checks for NVDA, JAWS, and VoiceOver against the B
 ### Pass criteria
 
 - Heading list contains expected worksheet structure.
-- Skip link is reachable and functional.
+- Both skip links are reachable and functional.
+- Arrow-key tab switching works and JAWS announces the new tab name.
+- Alt+T shortcut jumps to the tab strip.
 - Status updates are announced with clear content.
 - Display role is read appropriately for passive output.
 
@@ -86,8 +96,10 @@ This guide defines repeatable checks for NVDA, JAWS, and VoiceOver against the B
 1. Enable VoiceOver (`Cmd+F5`).
 2. With Quick Nav on, use `VO+U` (Rotor) and inspect headings.
 3. Confirm heading hierarchy and worksheet naming are meaningful.
-4. Tab to skip link and activate it.
-5. Verify VoiceOver announces movement to main content.
+4. Tab to skip links and activate "Skip to worksheet tabs".
+5. Verify VoiceOver announces movement to the tab strip.
+6. Use Left/Right arrow keys to switch worksheets and confirm announcements.
+7. Press `Alt+T` (or `Option+T` on Mac) from within a worksheet to jump to the tab strip.
 6. Fill one worksheet example and compute a result.
 7. Confirm result is announced as a status update.
 8. Navigate to display region and verify it is announced as status/output rather than a text entry field.
@@ -95,7 +107,9 @@ This guide defines repeatable checks for NVDA, JAWS, and VoiceOver against the B
 ### Pass criteria
 
 - Rotor shows clear heading structure.
-- Skip navigation works reliably.
+- Both skip links work reliably.
+- Arrow-key tab switching works and VoiceOver announces the new tab.
+- Alt+T (Option+T) shortcut jumps to the tab strip.
 - Live result updates are spoken and understandable.
 - Display behaves as a status region.
 
@@ -105,7 +119,7 @@ This guide defines repeatable checks for NVDA, JAWS, and VoiceOver against the B
 
 Use this same mini scenario in each screen reader:
 
-1. Go to TVM worksheet.
+1. Press `Alt+T` to jump to tab strip, then Right arrow to TVM worksheet.
 2. Enter: `N=360`, `I/Y=5.5`, `PV=75000`, `FV=0`, `P/Y=12`, `C/Y=12`.
 3. Activate **Compute PMT**.
 4. Expected spoken result should reflect approximately `-425.84`.

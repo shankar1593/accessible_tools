@@ -13,7 +13,7 @@ AI support was used for:
 
 - Architecture planning for separating `calculator.py` (pure logic) from `app.py` (Dash UI)
 - Implementation code across worksheets and callbacks
-- All 8 WCAG/ARIA fixes introduced during accessibility audit
+- All 9 WCAG/ARIA fixes introduced during accessibility audit (including WAI-ARIA Tabs keyboard pattern)
 - Test suite generation and expansion, including printed output helpers and summary-oriented test ergonomics
 - User-facing guides and project documentation drafts
 - Documentation polishing for consistency and onboarding clarity

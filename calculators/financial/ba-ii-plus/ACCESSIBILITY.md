@@ -18,9 +18,9 @@ The following success criteria are explicitly addressed in current implementatio
 
 ### Operable
 
-- **2.1.1 Keyboard (A):** All controls are reachable and operable via keyboard.
+- **2.1.1 Keyboard (A):** All controls are reachable and operable via keyboard. Worksheet tabs support arrow-key navigation following the WAI-ARIA Tabs pattern.
 - **2.1.2 No Keyboard Trap (A):** Focus can move in and out of all controls.
-- **2.4.1 Bypass Blocks (A):** Skip link provided at top of DOM.
+- **2.4.1 Bypass Blocks (A):** Skip links provided at top of DOM (skip to content + skip to worksheet tabs).
 - **2.4.3 Focus Order (A):** Focus follows interface reading and workflow order.
 - **2.4.6 Headings and Labels (AA):** Headings and labels describe purpose clearly.
 - **2.4.7 Focus Visible (AA):** Visible focus styles for interactive controls.
@@ -33,10 +33,10 @@ The following success criteria are explicitly addressed in current implementatio
 
 ### Robust
 
-- **4.1.2 Name, Role, Value (A):** Roles/states are set for status regions and grouped controls.
+- **4.1.2 Name, Role, Value (A):** Roles/states are set for status regions, grouped controls, and the tab strip (`role="tablist"` / `role="tab"` with `aria-selected`).
 - **4.1.3 Status Messages (AA):** Result and display announcements use polite live regions.
 
-## 8 specific fixes implemented
+## 9 specific fixes implemented
 
 1. Set `lang="en"` at document root using Dash `index_string`.
 2. Calculator display uses `role="status"` (not `role="textbox"`).
@@ -44,12 +44,14 @@ The following success criteria are explicitly addressed in current implementatio
 4. Result areas use `role="status"` with `aria-live="polite"` and atomic announcements.
 5. Added text prefixes (`✓` success, `⚠` error) so color is not the sole indicator.
 6. Standardized button borders (`#555555`) to satisfy non-text contrast expectations.
-7. Added skip navigation link as the first focusable DOM element.
+7. Added skip navigation links as the first focusable DOM elements (skip to content + skip to worksheet tabs).
 8. Wrapped radio groups with `role="group"` + `aria-labelledby`.
+9. Added WAI-ARIA Tabs keyboard pattern to the worksheet tab strip via `tab-keyboard-nav.js`: arrow keys to navigate tabs, Home/End to jump to first/last, Enter/Space to activate, and Alt+T global shortcut to jump to the tab strip.
 
-## Known remaining accessibility gap
+## Known remaining accessibility gaps
 
 - **Dash 4 limitation:** `dcc.Input` does not currently expose `aria-describedby` as expected for direct helper-text linking in all cases.
+- **Tab keyboard pattern:** The WAI-ARIA Tabs keyboard behavior is provided by a client-side JavaScript enhancement (`assets/tab-keyboard-nav.js`) because Dash's `dcc.Tabs` does not natively support arrow-key navigation or proper `role="tab"` semantics.
 
 ## Screen reader testing status
 

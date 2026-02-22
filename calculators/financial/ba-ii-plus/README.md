@@ -24,6 +24,7 @@ Blind and low-vision candidates preparing for CFA, FRM and other competitive fin
 - 12 BA II Plus worksheets: Basic Calc (arithmetic + memory), TVM, Amortization, Cash Flow (NPV/IRR), Bond, Depreciation, Statistics, Interest Conversion, Percent Change, Profit Margin, Breakeven, Date
 - WCAG 2.1 AA + WAI-ARIA 1.1 implementation in a Dash 4 UI
 - Screen-reader-first interaction model with semantic headings and live regions
+- Full keyboard navigation: arrow keys to switch worksheet tabs, Alt+T to jump to tab strip
 - Backend formulas implemented in pure Python and verified against TI guidebook examples
 - 231 tests total (`103` backend + `128` app/integration)
 
@@ -36,6 +37,7 @@ Blind and low-vision candidates preparing for CFA, FRM and other competitive fin
 - `src/app.py` — Dash UI, worksheet layouts, callbacks, ARIA behavior
 - `src/calculator.py` — Pure Python formula engine (no UI dependencies)
 - `src/assets/custom.css` — All styling in one place (no `html.Style()`)
+- `src/assets/tab-keyboard-nav.js` — WAI-ARIA Tabs keyboard pattern (arrow keys, Alt+T shortcut)
 - `tests/test_calculator.py` — Backend formula tests with summary output
 - `tests/test_app.py` — App/integration tests for worksheet behavior
 

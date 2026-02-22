@@ -63,6 +63,7 @@ The `-s` flag is expected for this project because tests print pass/fail details
 
 - Keep formula logic as pure functions/methods in `src/calculator.py` (no UI dependencies).
 - Keep all style rules in `src/assets/custom.css` (do not use `html.Style()` in Dash 4).
+- Keep keyboard navigation enhancements in `src/assets/tab-keyboard-nav.js` (Dash auto-loads all JS in `assets/`).
 - Prefer semantic HTML wrappers for ARIA attributes.
 - `dbc.Col` cannot reliably host ARIA attributes for this app; wrap content in `html.Div` and apply ARIA there.
 - Preserve sign convention: outflows negative, inflows positive.
@@ -79,6 +80,7 @@ The `-s` flag is expected for this project because tests print pass/fail details
 - [ ] New tests were added for new functionality
 - [ ] Accessibility behavior validated for changed UI paths
 - [ ] CSS changes are only in `src/assets/custom.css`
+- [ ] JS keyboard behavior changes are only in `src/assets/tab-keyboard-nav.js`
 - [ ] No `html.Style()` added
 - [ ] ARIA attributes are on `html.*` elements (not `dbc.*`)
 - [ ] `CHANGELOG.md` updated when user-visible behavior changes

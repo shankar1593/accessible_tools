@@ -242,6 +242,10 @@ def build_basic_tab():
                       html.P("You can use on-screen buttons or type directly in Direct Entry. "
                           "Press Tab to move, Enter or Space to activate controls. "
                           "Every result is announced to screen readers."),
+                    html.P([html.Strong("SWITCH WORKSHEETS — "),
+                            "Use Left/Right arrow keys on the tab strip, "
+                            "or press Alt+T from anywhere to jump to the tabs."],
+                           style={"color": C["info"]}),
                     html.Hr(style={"border-color": C["border"], "margin": "10px 0"}),
                     html.P([html.Strong("DISPLAY — "), "Shows the current number or result."]),
                     html.P([html.Strong("MODE BAR — "), "Describes what the next press will do."]),
@@ -718,6 +722,8 @@ def build_date_tab():
 app.layout = html.Div([
     # Skip navigation — first DOM element (WCAG 2.4.1)
     html.A("Skip to calculator", href="#main-content", className="skip-nav"),
+    html.A("Skip to worksheet tabs", href="#main-tabs", className="skip-nav",
+           style={"left": "220px"}),
 
     # Screen-reader live region
     html.Div(id="sr-announce", role="status",

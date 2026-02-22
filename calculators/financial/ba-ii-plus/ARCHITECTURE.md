@@ -33,12 +33,23 @@ This split is deliberate so formula correctness can be validated independently f
 - Pattern: `aria-describedby` support is limited for `dcc.Input` in Dash 4 contexts.
 - Workaround: keep visible helper text adjacent and preserve explicit labels.
 
+### Constraint: `dcc.Tabs` keyboard navigation
+
+- Pattern: Dash's `dcc.Tabs` renders tab headers as `<div>` elements without `role="tab"`, `aria-selected`, or arrow-key navigation — failing the WAI-ARIA Tabs keyboard pattern.
+- Workaround: `src/assets/tab-keyboard-nav.js` (auto-loaded by Dash) retrofits proper ARIA roles and keyboard behavior:
+  - Sets `role="tablist"` on the tab strip container and `role="tab"` + `aria-selected` on each tab header
+  - Left/Right arrow keys move focus and activate adjacent tabs
+  - Home/End jump to first/last tab
+  - Alt+T global shortcut jumps focus to the currently-selected tab from anywhere on the page
+  - A MutationObserver keeps ARIA state in sync when Dash re-renders tabs
+
 ## ARIA implementation decisions
 
 - **Display as status region:** calculator display uses `role="status"` so updates are announced naturally and not treated as editable input.
 - **Result live regions:** compute outputs are `role="status"` with `aria-live="polite"` and atomic updates.
 - **Grouped controls:** radio groups wrapped with `role="group"` + `aria-labelledby`.
-- **Skip link:** top-of-DOM bypass mechanism for repeated content.
+- **Skip links:** two top-of-DOM bypass links — skip to main content and skip to worksheet tabs.
+- **Tab strip keyboard pattern:** `tab-keyboard-nav.js` adds `role="tablist"` / `role="tab"` and arrow-key navigation to the Dash tab strip, following WAI-ARIA Authoring Practices for Tabs.
 - **Semantic headings:** worksheet structure is discoverable by heading navigation in screen readers.
 
 ## Color system and contrast

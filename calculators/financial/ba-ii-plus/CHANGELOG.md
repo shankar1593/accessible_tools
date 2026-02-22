@@ -4,6 +4,23 @@ All notable changes to this project are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project follows semantic versioning intent.
 
+## [0.2.0] - 2026-02-22
+
+### Added
+
+- WAI-ARIA Tabs keyboard pattern for worksheet tab strip (`assets/tab-keyboard-nav.js`):
+  - Left/Right arrow key navigation between worksheet tabs
+  - Home/End keys to jump to first/last tab
+  - Enter/Space to activate focused tab
+  - Alt+T global shortcut to jump focus to the tab strip from anywhere
+- Proper ARIA roles on tab strip: `role="tablist"` on container, `role="tab"` with `aria-selected` on each tab header
+- Second skip link ("Skip to worksheet tabs") at top of page
+- Help text updated with keyboard navigation instructions for switching worksheets
+
+### Fixed
+
+- Worksheet tabs were not keyboard-navigable (Tab key only moved through controls within the active worksheet, not between worksheet tabs)
+
 ## [0.1.0] - 2026-02-19
 
 ### Added
