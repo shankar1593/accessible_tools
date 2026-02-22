@@ -67,6 +67,12 @@ The `-s` flag is expected for this project because tests print pass/fail details
 - `dbc.Col` cannot reliably host ARIA attributes for this app; wrap content in `html.Div` and apply ARIA there.
 - Preserve sign convention: outflows negative, inflows positive.
 
+## Further reading
+
+- [ARCHITECTURE.md](ARCHITECTURE.md) — design decisions, color system and ARIA implementation
+- [FORMULA_VERIFICATION.md](FORMULA_VERIFICATION.md) — test verification against TI manual examples
+- [.github/PROJECTGUIDE.md](.github/PROJECTGUIDE.md) — detailed project guide with full backend/UI specification
+
 ## Pull request checklist
 
 - [ ] Tests pass with `pytest tests/ -s -q`

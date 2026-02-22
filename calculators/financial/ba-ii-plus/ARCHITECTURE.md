@@ -52,6 +52,7 @@ Palette is defined to preserve dark-theme readability and non-text contrast:
 | Text | `#f5f5f5` | primary body text | high contrast on dark surfaces |
 | Muted | `#c0c0c0` | labels/help text | readable secondary text |
 | Accent | `#ffb300` | headings/focus/highlights | strong contrast on dark backgrounds |
+| Accent hover | `#cc8f00` | hover state for accent elements | maintains contrast on interaction |
 | Border | `#555555` | button and panel outlines | ~3.6:1 non-text contrast target |
 | Success | `#00e676` | success status | paired with ✓ text indicator |
 | Error | `#ff6d6d` | error status | paired with ⚠ text indicator |

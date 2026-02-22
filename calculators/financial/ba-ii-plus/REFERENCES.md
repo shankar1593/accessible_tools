@@ -14,7 +14,7 @@
 3. **W3C**. *Accessible Rich Internet Applications (WAI-ARIA) 1.1*.  
    https://www.w3.org/TR/wai-aria-1.1/
 
-4. **W3C WAI-ARIA Authoring Practices Guide (APG) 1.2*.  
+4. **W3C**. *WAI-ARIA Authoring Practices Guide (APG) 1.2*.  
    https://www.w3.org/WAI/ARIA/apg/
 
 ## Finance exam policy context (CFA, FRM and related programs)

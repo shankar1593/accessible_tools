@@ -72,4 +72,4 @@ Please open a GitHub issue and include:
 - Steps to reproduce
 - Expected spoken output vs actual spoken output
 
-Use the bug template and mark the issue as accessibility-specific.
+Use the [bug report template](.github/ISSUE_TEMPLATE/bug_report.md) and mark the issue as accessibility-specific.

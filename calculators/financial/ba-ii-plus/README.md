@@ -21,7 +21,7 @@ Blind and low-vision candidates preparing for CFA, FRM and other competitive fin
 
 ## Features
 
-- 12 BA II Plus worksheets: TVM, Amortization, Cash Flow (NPV/IRR), Bond, Depreciation, Statistics, Interest Conversion, Percent Change, Profit Margin, Breakeven, Date, Memory
+- 12 BA II Plus worksheets: Basic Calc (arithmetic + memory), TVM, Amortization, Cash Flow (NPV/IRR), Bond, Depreciation, Statistics, Interest Conversion, Percent Change, Profit Margin, Breakeven, Date
 - WCAG 2.1 AA + WAI-ARIA 1.1 implementation in a Dash 4 UI
 - Screen-reader-first interaction model with semantic headings and live regions
 - Backend formulas implemented in pure Python and verified against TI guidebook examples
@@ -91,6 +91,8 @@ pytest tests/ -s -q
 ```
 
 Use the `-s` flag. It is required to display the printed pass/fail output and summary table used by this project.
+
+See [FORMULA_VERIFICATION.md](FORMULA_VERIFICATION.md) for detailed test verification against official TI manual examples.
 
 ## Known limitations
 

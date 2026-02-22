@@ -1,8 +1,8 @@
-# BA II Plus Accessible Financial Calculator — Project Guide
+# BA II Plus Accessible Calculator — Project Guide
 
 ## 1. Project Overview
 
-This project is a **web-based, accessible replica of the Texas Instruments BA II Plus financial calculator**, built specifically for **visually impaired users** preparing for or sitting the **CFA (Chartered Financial Analyst) exam**. The CFA Institute permits the BA II Plus as an approved exam calculator. This app must be functionally equivalent to the physical device so that blind and low-vision candidates can practise with a tool that works seamlessly with screen readers.
+This project is a **web-based, accessible replica of the Texas Instruments BA II Plus financial calculator**, built specifically for **blind and low-vision users** preparing for or sitting **CFA, FRM and other competitive finance exams**. The CFA Institute and other exam bodies permit the BA II Plus as an approved exam calculator. This app must be functionally equivalent to the physical device so that blind and low-vision candidates can practise with a tool that works seamlessly with screen readers.
 
 ### Primary Goals
 
@@ -331,7 +331,7 @@ pytest tests/test_app.py -s -q          # integration/logic
 
 ### 7.2 Test sections
 
-**test_calculator.py** (103 calculator tests + 1 summary = 114 collected):
+**test_calculator.py** (103 calculator tests + 1 summary):
 1. Basic Arithmetic — 19 tests
 2. Memory Operations — 8 tests
 3. Effective Period Rate — 6 tests
@@ -348,10 +348,10 @@ pytest tests/test_app.py -s -q          # integration/logic
 14. Bond Worksheet — 5 tests
 15. Edge Cases & Reset — 8 tests
 
-**test_app.py** (128 integration tests + 1 summary = 140 collected):
+**test_app.py** (128 integration tests + 1 summary):
 Same 15 sections but tests the logic as accessed through the UI layer, with additional tests for state isolation, independence between worksheets, and edge cases from the app perspective.
 
-### 7.4 Key test patterns
+### 7.3 Key test patterns
 
 ```python
 # Every test file starts with the sys.path fix:
@@ -465,10 +465,6 @@ These are the canonical expected values from the official TI BA II Plus guideboo
 3. Do not change the colour hex values in `custom.css` without also updating the `C` dict in `app.py` (used for inline style props that cannot be done via class).
 4. Verify contrast ratios if changing any text or border colour: text must be ≥4.5:1, UI components ≥3:1.
 
-### When asked to "save files to the project"
-
-The project files at `/mnt/project/` are **read-only**. Deliver files via `/mnt/user-data/outputs/` and use `present_files()`. Clearly label each file with its destination path within the project folder structure.
-
 ---
 
 ## 12. Quick Reference — File Locations
@@ -480,4 +476,4 @@ The project files at `/mnt/project/` are **read-only**. Deliver files via `/mnt/
 | `custom.css` | `src/assets/custom.css` | All styling |
 | `test_calculator.py` | `tests/test_calculator.py` | Backend tests |
 | `test_app.py` | `tests/test_app.py` | Integration tests |
-| `PROJECT_GUIDE.md` | Project docs (this file) | Claude reads at session start |
+| `PROJECTGUIDE.md` | `.github/PROJECTGUIDE.md` | Detailed project guide |

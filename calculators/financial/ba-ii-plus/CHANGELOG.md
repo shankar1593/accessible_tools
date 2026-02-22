@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 - Initial accessible BA II Plus web application built with Python + Dash 4
 - 12 worksheet implementations:
+  - Basic Calc (arithmetic + memory)
   - TVM
   - Amortization
   - Cash Flow (NPV/IRR)
@@ -21,7 +22,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
   - Profit Margin
   - Breakeven
   - Date
-  - Memory
 - WCAG 2.1 AA-aligned accessibility implementation
 - WAI-ARIA 1.1 semantics and live-region behavior
 - Full test suite totaling **231 tests**:
