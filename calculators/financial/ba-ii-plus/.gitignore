@@ -33,6 +33,10 @@ Thumbs.db
 .env
 .env.*
 
+# ── Copyrighted reference PDFs (obtain from TI directly) ─────────────────────
+docs/BA-II-PLUS_EN.pdf
+docs/TIBAIIPlus.pdf
+
 # ── pytest ────────────────────────────────────────────────────────────────────
 .pytest_cache/
 htmlcov/

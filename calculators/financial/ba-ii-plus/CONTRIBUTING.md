@@ -4,14 +4,16 @@ Thank you for considering a contribution. This project exists to reduce accessib
 
 ## Development setup
 
-1. Clone the repository and move into project root:
-   - `calculators/financial/ba-ii-plus`
-2. Create and activate a virtual environment.
+> **Important:** This project uses a shared virtual environment (`.venv`) located at the **repository root** (`accessible_tools/.venv`), not inside the `ba-ii-plus` subdirectory. Always activate it before running the app or tests.
+
+1. Clone the repository.
+2. Create and activate the shared `.venv` at the repository root.
 3. Install dependencies.
 
 ### Windows (PowerShell)
 
 ```powershell
+# From the repository root (accessible_tools/)
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
@@ -21,6 +23,7 @@ pip install dash dash-bootstrap-components pytest
 ### macOS / Linux
 
 ```bash
+# From the repository root (accessible_tools/)
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip

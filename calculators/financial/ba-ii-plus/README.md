@@ -43,14 +43,16 @@ Blind and low-vision candidates preparing for CFA, FRM and other competitive fin
 
 ## Installation
 
+> **Important:** This project uses a shared virtual environment (`.venv`) located at the **repository root** (`accessible_tools/.venv`), not inside the `ba-ii-plus` subdirectory. Always activate it before running the app or tests.
+
 ### Windows (PowerShell)
 
 ```powershell
-cd calculators/financial/ba-ii-plus
+# From the repository root (accessible_tools/)
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
-pip install -r requirements.txt
+pip install -r calculators/financial/ba-ii-plus/requirements.txt
 ```
 
 If `requirements.txt` is not present in your branch, install core packages directly:
@@ -62,11 +64,11 @@ pip install dash dash-bootstrap-components pytest
 ### macOS / Linux
 
 ```bash
-cd calculators/financial/ba-ii-plus
+# From the repository root (accessible_tools/)
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
-pip install -r requirements.txt
+pip install -r calculators/financial/ba-ii-plus/requirements.txt
 ```
 
 Fallback install:
@@ -77,6 +79,8 @@ pip install dash dash-bootstrap-components pytest
 
 ## Run the app
 
+Make sure the `.venv` is activated first (see Installation above), then:
+
 ```bash
 cd calculators/financial/ba-ii-plus/src
 python app.py
@@ -86,7 +90,7 @@ Open [http://localhost:8052](http://localhost:8052) (the URL is also printed in 
 
 ## Run tests
 
-From the project root (`calculators/financial/ba-ii-plus`):
+Make sure the `.venv` is activated first, then from the project folder (`calculators/financial/ba-ii-plus`):
 
 ```bash
 pytest tests/ -s -q

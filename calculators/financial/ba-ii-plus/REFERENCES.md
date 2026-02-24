@@ -4,7 +4,9 @@
 
 1. **Texas Instruments**. *BA II Plus™ / BA II Plus™ Professional Guidebook* (2004–2019 editions).  
    ISBN-13: **978-1-59349-765-0** (print editions; verify against your regional copy/printing).  
-   Local repository references: `docs/BA-II-PLUS_EN.pdf`, `docs/TIBAIIPlus.pdf`
+   Reference documents (not included in this repository — obtain from TI directly):
+   - `BA-II-PLUS_EN.pdf` — official BA II Plus guidebook  
+   - `TIBAIIPlus.pdf` — supplementary TI reference manual
 
 ## Accessibility standards
 
